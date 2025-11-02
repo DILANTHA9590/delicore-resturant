@@ -10,7 +10,7 @@ export default function HomePage() {
       >
         <h1 className="">home paghe</h1>
 
-        <h1 className="">Welcome to Home Page</h1>
+        <h1 className="bg-pri">Welcome to Home Page</h1>
       </div>
     </>
   );
