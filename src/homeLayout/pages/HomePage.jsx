@@ -15,6 +15,7 @@ export default function HomePage() {
       >
         {/* <div className="fixed inset-0 bg-black/90 w-"></div> */}
       </section>
+      <div className="h-[40vh]"></div>
     </>
   );
 }
