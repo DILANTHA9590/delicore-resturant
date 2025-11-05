@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function SideNavBar({ setOpenBav, openNav }) {
   return (
-    <div className="h-[10%] opacity-55 backdrop-blur-xl flex  justify-between items-center sm:text-4xl text-description font-bold sm:px-8 p-2">
+    <div className="h-[10%] opacity-55 backdrop-blur-xl flex  justify-between items-center sm:text-4xl text-description font-bold sm:px-8 p-2 top-0 sticky bg-secondary_white">
       <div className="leading-4 sm:leading-8">
         <h1>Delicore</h1>
         <h1 className="pl-5 sm:pl-10">Resturant</h1>
@@ -16,15 +16,9 @@ export default function SideNavBar({ setOpenBav, openNav }) {
         </div>
         <div onClick={() => setOpenBav(!openNav)}>
           {openNav ? (
-            <div className="flex flex-col gap-1 sm:gap-2">
-              <h1 className="sm:w-13 w-9 h-1.5 bg-black"></h1>
-              <h1 className="sm:w-13 w-6 h-1.5 bg-black"></h1>
-              <h1 className="sm:w-13 w-9 h-1.5 bg-black"></h1>
-            </div>
-          ) : (
             <div className="relative ">
               <motion.h1
-                className="sm:w-13 w-9 h-1.5 absolute bg-black " //rotate-44
+                className="sm:w-13 w-9 h-1.5 absolute bg-primary " //rotate-44
                 //  rotate-134
                 initial={{
                   rotate: 0,
@@ -34,7 +28,7 @@ export default function SideNavBar({ setOpenBav, openNav }) {
                 }}
               ></motion.h1>
               <motion.h1
-                className="sm:w-13 w-9 h-1.5 w-  bg-black"
+                className="sm:w-13 w-9 h-1.5 w-  bg-primary"
                 initial={{
                   rotate: 0,
                 }}
@@ -42,6 +36,12 @@ export default function SideNavBar({ setOpenBav, openNav }) {
                   rotate: 45,
                 }}
               ></motion.h1>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-1 sm:gap-2">
+              <h1 className="sm:w-13 w-9 h-1.5 bg-primary"></h1>
+              <h1 className="sm:w-13 w-6 h-1.5 bg-primary"></h1>
+              <h1 className="sm:w-13 w-9 h-1.5 bg-primary"></h1>
             </div>
           )}
         </div>
