@@ -4,17 +4,20 @@ import { motion } from "framer-motion";
 
 export default function SideNavBar({ setOpenBav, openNav }) {
   return (
-    <div className="h-[10%] opacity-55 backdrop-blur-xl flex  justify-between items-center sm:text-4xl text-description font-bold sm:px-8 p-2 top-0 sticky bg-secondary_white">
+    <div
+      className="h-[10%]  backdrop-blur-xl flex  justify-between items-center sm:text-4xl text-description font-bold sm:px-8 p-2 top-0 sticky bg-secondary_white
+     z-100"
+    >
       <div className="leading-4 sm:leading-8">
         <h1>Delicore</h1>
-        <h1 className="pl-5 sm:pl-10">Resturant</h1>
+        <h1 className="pl-5 italic sm:pl-10 font-poppins ">Resturant</h1>
       </div>
       <div className="flex items-center gap-3 sm:gap-10">
         <div className="flex gap-3 sm:gap-10">
           <Link>Login</Link>
           <Link clas>Register</Link>
         </div>
-        <div onClick={() => setOpenBav(!openNav)}>
+        <div onClick={() => setOpenBav(!openNav)} className="cursor-pointer">
           {openNav ? (
             <div className="relative ">
               <motion.h1

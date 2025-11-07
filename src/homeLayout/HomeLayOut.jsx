@@ -5,19 +5,19 @@ import SideNavBar from "./component/SideNavBar";
 import { motion, AnimatePresence, spring } from "framer-motion";
 
 export default function HomeLayout() {
-  const [openNav, setOpenBav] = useState(true);
+  const [openNav, setOpenBav] = useState(false);
 
   return (
     <>
-      <div className="h-screen overflow-hidden overflow-y-auto">
+      <div className="h-screen overflow-hidden overflow-y-auto font-poppins">
         {openNav && (
           <AnimatePresence>
             <motion.div
               key="box"
               initial={{ x: "-100%" }}
-              animate={{ x: 0, transition: { duration: 1 } }}
-              exit={{ x: "-100%", transition: { duration: 1 } }} // 1 sec
-              className="fixed inset-0 bg-black/10 w-[20%] backdrop-blur-2xl"
+              animate={{ x: 0, transition: { duration: 0.5 } }}
+              exit={{ x: "-100%", transition: { duration: 0.5 } }} // 1 sec
+              className="fixed inset-0 bg-black/10 sm:w-[20%] w-[40%] backdrop-blur-2xl"
             />
           </AnimatePresence>
         )}
