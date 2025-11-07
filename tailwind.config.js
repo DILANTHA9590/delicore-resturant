@@ -13,6 +13,7 @@ module.exports = {
         accent: "#8B5CFF", // Purple-500
         primary_white: "#d9dcdf", // White
         secondary_white: "#eaeaea", //
+        link: "#967a26",
       },
 
       fontSize: {
@@ -23,7 +24,9 @@ module.exports = {
         small: "xl",
       },
       fontFamily: {
-        inter: ["Inter", "sans-serif"], // Optional font
+        poppins: ["Poppins", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        eduHand: ["Edu QLD Hand", "cursive"],
       },
 
       textColor: {
