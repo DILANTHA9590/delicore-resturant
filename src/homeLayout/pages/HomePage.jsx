@@ -223,12 +223,13 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence, spring } from "framer-motion";
 
 export default function HomePage() {
   return (
     <>
       <section
-        className="relative h-auto bg-center bg-no-repeat bg-cover sm:h-screen"
+        className="relative h-auto bg-center bg-no-repeat bg-cover sm:h-full"
         style={{
           backgroundImage: "url('/header.jpeg')", // ✅ Image from public folder
         }}
@@ -239,53 +240,133 @@ export default function HomePage() {
         {/* ✅ Content Wrapper */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full py-16 sm:gap-12 md:flex-row">
           {/* Left Section */}
-          <div className="flex flex-col items-center space-y-6 text-center md:items-start md:text-left">
-            <h1 className="text-3xl font-bold leading-tight text-white md:text-6xl drop-shadow-lg">
-              Welcome to Delicore: <br /> Dine In, Take Out, <br /> or We've Got
-              You Covered!
-            </h1>
+          <div className="flex flex-col items-center p-5 space-y-6 text-center md:items-start md:text-left">
+            <motion.h1
+              className="text-3xl font-bold leading-tight text-white md:text-6xl drop-shadow-lg "
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 3,
+              }}
+              transition={{
+                duration: 2,
+              }}
+            >
+              Welcome to Delicore: <br />
+              Dine In, Take Out, <br />
+              or We've Got You Covered!
+            </motion.h1>
             <Link
               to="/order"
-              className="px-8 py-4 text-lg font-semibold text-white transition bg-orange-500 rounded-full shadow-md hover:bg-orange-600"
+              className="px-4 py-1.5 overflow-hidden text-lg font-semibold text-white transition rounded-full shadow-md sm:px-8 sm:py-4 bg-link hover:bg-orange-600"
             >
-              Order Now
+              <motion.h1
+                initial={{
+                  x: "-200px",
+                }}
+                animate={{
+                  x: 0,
+                }}
+                transition={{
+                  duration: 0.5,
+                }}
+              >
+                Order Now
+              </motion.h1>
             </Link>
           </div>
 
           {/* Right Section - Booking Form */}
+          {/* Right Section - Booking Form */}
           <div className="p-2">
-            <div className="flex flex-col items-center w-full max-w-md p-6 overflow-hidden rounded-lg shadow-2xl bg-white/90 md:p-10">
+            <div className="flex flex-col items-center w-full max-w-md p-6 overflow-hidden rounded-lg shadow-2xl bg-white/90 md:p-10 ">
               <h2 className="mb-4 text-2xl font-bold text-gray-800">
                 Book a Table
               </h2>
-              <div className="w-full space-y-4">
-                <input
+
+              <div className="w-full space-y-4 ">
+                <motion.input
+                  initial={{
+                    x: "700px",
+                  }}
+                  animate={{
+                    x: "0",
+                  }}
+                  transition={{
+                    duration: 0.1,
+                  }}
                   type="text"
                   placeholder="Full Name"
-                  className="w-full p-3 border rounded focus:ring-2 focus:ring-orange-500"
+                  className="w-full p-1 border rounded sm:p-3 focus:ring-2 focus:ring-orange-500"
                 />
-                <input
+                <motion.input
+                  initial={{
+                    x: "650px",
+                  }}
+                  animate={{
+                    x: "0",
+                  }}
+                  transition={{
+                    duration: 0.3,
+                  }}
                   type="email"
                   placeholder="Email Address"
-                  className="w-full p-3 border rounded focus:ring-2 focus:ring-orange-500"
+                  className="w-full p-1 border rounded sm:p-3 focus:ring-2 focus:ring-orange-500"
                 />
-                <input
+                <motion.input
+                  initial={{
+                    x: "600px",
+                  }}
+                  animate={{
+                    x: "0",
+                  }}
+                  transition={{
+                    duration: 0.5,
+                  }}
                   type="tel"
                   placeholder="Phone Number"
-                  className="w-full p-3 border rounded focus:ring-2 focus:ring-orange-500"
+                  className="w-full p-1 border rounded sm:p-3 focus:ring-2 focus:ring-orange-500"
                 />
-                <input
+                <motion.input
+                  initial={{
+                    x: "550px",
+                  }}
+                  animate={{
+                    x: "0",
+                  }}
+                  transition={{
+                    duration: 0.7,
+                  }}
                   type="date"
-                  className="w-full p-3 border rounded focus:ring-2 focus:ring-orange-500"
+                  className="w-full p-1 border rounded sm:p-3 focus:ring-2 focus:ring-orange-500"
                 />
-                <input
+                <motion.input
+                  initial={{
+                    x: "500px",
+                  }}
+                  animate={{
+                    x: "0",
+                  }}
+                  transition={{
+                    duration: 0.9,
+                  }}
                   type="time"
-                  className="w-full p-3 border rounded focus:ring-2 focus:ring-orange-500"
+                  className="w-full p-1 border rounded sm:p-3 focus:ring-2 focus:ring-orange-500"
                 />
-                <input
+                <motion.input
+                  initial={{
+                    x: "550px",
+                  }}
+                  animate={{
+                    x: "0",
+                  }}
+                  transition={{
+                    duration: 1,
+                  }}
                   type="number"
                   placeholder="No. of Guests"
-                  className="w-full p-3 border rounded focus:ring-2 focus:ring-orange-500"
+                  className="w-full p-1 border rounded sm:p-3 focus:ring-2 focus:ring-orange-500"
                 />
 
                 <button className="w-full py-3 font-semibold text-white transition bg-black rounded-lg hover:bg-gray-800">

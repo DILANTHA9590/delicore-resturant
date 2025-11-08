@@ -6,7 +6,7 @@ export default function SideNavBar({ setOpenBav, openNav }) {
   return (
     <div
       className="h-[10%]  backdrop-blur-xl flex  justify-between items-center sm:text-4xl text-description font-bold sm:px-8 p-2 top-0 sticky bg-primary_white
-     z-100"
+     "
     >
       <div className="leading-4 sm:leading-8">
         <h1>Delicore</h1>
