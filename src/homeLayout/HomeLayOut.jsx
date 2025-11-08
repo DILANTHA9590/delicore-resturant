@@ -9,7 +9,7 @@ export default function HomeLayout() {
 
   return (
     <>
-      <div className="h-screen overflow-hidden overflow-y-auto font-poppins">
+      <div className="h-screen mx-auto overflow-hidden overflow-y-auto font-poppins">
         {openNav && (
           <AnimatePresence>
             <motion.div
