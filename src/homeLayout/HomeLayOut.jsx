@@ -15,9 +15,9 @@ export default function HomeLayout() {
             <motion.div
               key="box"
               initial={{ x: "-100%" }}
-              animate={{ x: 0, transition: { duration: 0.5 } }}
+              animate={{ x: 0, transition: { duration: 0.2 } }}
               exit={{ x: "-100%", transition: { duration: 0.5 } }} // 1 sec
-              className="fixed inset-0 bg-black/10 sm:w-[20%] w-[40%] backdrop-blur-2xl"
+              className="fixed inset-0 bg-black/10 sm:w-[20%] w-[40%] backdrop-blur-2xl z-100"
             />
           </AnimatePresence>
         )}
