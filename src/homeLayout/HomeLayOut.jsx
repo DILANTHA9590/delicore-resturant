@@ -3,13 +3,22 @@ import HomePage from "./pages/HomePage";
 import { Link, Route, Routes } from "react-router-dom";
 import SideNavBar from "./component/SideNavBar";
 import { motion, AnimatePresence, spring } from "framer-motion";
+import { div } from "framer-motion/client";
+import Login from "./component/login-signup-componets/LoginForm";
 
 export default function HomeLayout() {
   const [openNav, setOpenBav] = useState(false);
+  const [closelogin, setCloseLogin] = useState(false);
 
   return (
     <>
       <div className="h-screen mx-auto overflow-hidden overflow-y-auto font-poppins">
+        {/*------------------------------------ login form------------------------------------------------  */}
+
+        {closelogin && <Login setCloseLogin={setCloseLogin} />}
+
+        {/*------------------------------------- side nav bar------------------------------------------------- */}
+
         {openNav && (
           <AnimatePresence>
             <motion.div
@@ -22,10 +31,14 @@ export default function HomeLayout() {
           </AnimatePresence>
         )}
 
+        {/* ------------------------------------------desktop nav bar-------------------------------------------------- */}
         <div className="flex flex-col h-full ">
-          <SideNavBar setOpenBav={setOpenBav} openNav={openNav} />
-          {/* 
-          <div className="fixed inset-0 bg-black/90 w-[20%]  "></div> */}
+          <SideNavBar
+            setOpenBav={setOpenBav}
+            openNav={openNav}
+            setCloseLogin={setCloseLogin}
+          />
+          {/*----------------------------------- Home  page ------------------------------------------------- */}
           <div className="h-[90%] ">
             <Routes>
               <Route path="/" element={<HomePage />} />
