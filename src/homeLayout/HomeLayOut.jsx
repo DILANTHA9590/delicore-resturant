@@ -5,10 +5,12 @@ import SideNavBar from "./component/SideNavBar";
 import { motion, AnimatePresence, spring } from "framer-motion";
 import { div } from "framer-motion/client";
 import Login from "./component/login-signup-componets/LoginForm";
+import RegisterForm from "./component/login-signup-componets/RegisterForm";
 
 export default function HomeLayout() {
   const [openNav, setOpenBav] = useState(false);
   const [closelogin, setCloseLogin] = useState(false);
+  const [closeSignUp, setCloseSignUp] = useState(false);
 
   return (
     <>
@@ -16,6 +18,8 @@ export default function HomeLayout() {
         {/*------------------------------------ login form------------------------------------------------  */}
 
         {closelogin && <Login setCloseLogin={setCloseLogin} />}
+
+        {closeSignUp && <RegisterForm setCloseSignUp={setCloseSignUp} />}
 
         {/*------------------------------------- side nav bar------------------------------------------------- */}
 
@@ -37,6 +41,7 @@ export default function HomeLayout() {
             setOpenBav={setOpenBav}
             openNav={openNav}
             setCloseLogin={setCloseLogin}
+            setCloseSignUp={setCloseSignUp}
           />
           {/*----------------------------------- Home  page ------------------------------------------------- */}
           <div className="h-[90%] ">
