@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 //---------------------------------------- desktop nav bar----------------------------------------
-export default function SideNavBar({ setOpenBav, openNav, setCloseLogin }) {
+export default function SideNavBar({
+  setOpenBav,
+  openNav,
+  setCloseLogin,
+  setCloseSignUp,
+}) {
   return (
     <div
       className="h-[10%]  backdrop-blur-xl flex  justify-between items-center sm:text-4xl text-description font-bold sm:px-8 p-2 top-0 sticky bg-primary_white
@@ -22,7 +27,14 @@ export default function SideNavBar({ setOpenBav, openNav, setCloseLogin }) {
           >
             Login {/*  //login button  🟢 */}
           </Link>
-          <Link clas>Register</Link> {/*  //signup button  🟢 */}
+          <Link
+            onClick={() => {
+              setCloseSignUp(true);
+            }}
+          >
+            Register
+          </Link>{" "}
+          {/*  //signup button  🟢 */}
         </div>
         <div onClick={() => setOpenBav(!openNav)} className="cursor-pointer">
           {openNav ? (
