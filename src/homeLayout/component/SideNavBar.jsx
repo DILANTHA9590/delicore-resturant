@@ -1,21 +1,28 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
-export default function SideNavBar({ setOpenBav, openNav }) {
+//---------------------------------------- desktop nav bar----------------------------------------
+export default function SideNavBar({ setOpenBav, openNav, setCloseLogin }) {
   return (
     <div
       className="h-[10%]  backdrop-blur-xl flex  justify-between items-center sm:text-4xl text-description font-bold sm:px-8 p-2 top-0 sticky bg-primary_white
      z-100"
     >
+      {/*-------------------------------- navbar  left side logo section------------------- */}
       <div className="leading-4 sm:leading-8">
         <h1>Delicore</h1>
         <h1 className="pl-5 italic sm:pl-10 font-poppins ">Resturant</h1>
       </div>
       <div className="flex items-center gap-3 sm:gap-10">
         <div className="flex gap-3 sm:gap-10">
-          <Link>Login</Link>
-          <Link clas>Register</Link>
+          <Link
+            onClick={() => {
+              setCloseLogin(true);
+            }}
+          >
+            Login {/*  //login button  🟢 */}
+          </Link>
+          <Link clas>Register</Link> {/*  //signup button  🟢 */}
         </div>
         <div onClick={() => setOpenBav(!openNav)} className="cursor-pointer">
           {openNav ? (
@@ -41,6 +48,7 @@ export default function SideNavBar({ setOpenBav, openNav }) {
               ></motion.h1>
             </div>
           ) : (
+            //-------------------------------nav bar hamburger menu---------------------------------------------
             <div className="flex flex-col gap-1 sm:gap-2">
               <h1 className="sm:w-13 w-9 h-1.5 bg-primary"></h1>
               <h1 className="sm:w-13 w-6 h-1.5 bg-primary"></h1>
