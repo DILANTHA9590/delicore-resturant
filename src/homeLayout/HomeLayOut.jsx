@@ -19,6 +19,8 @@ export default function HomeLayout() {
 
         {closelogin && <Login setCloseLogin={setCloseLogin} />}
 
+        {/* ----------------------------signup form------------------------------------------- */}
+
         {closeSignUp && <RegisterForm setCloseSignUp={setCloseSignUp} />}
 
         {/*------------------------------------- side nav bar------------------------------------------------- */}
